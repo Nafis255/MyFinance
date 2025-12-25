@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  /* Definisi Warna Statis */
+  --color-primary: #3b82f6;
+  --color-secondary: #10b981;
+  --color-danger: #ef4444;
+  --color-warning: #f59e0b;
+  --color-dark: #1f2937;
+  --color-light: #f9fafb;
+  --color-gray: #6b7280;
+  --color-border: #e5e7eb;
+  --radius: 8px;
+}
+
+@layer base {
+  body {
+    @apply bg-light text-dark font-sans antialiased;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-[1200px] mx-auto px-5;
+  }
+
+  /* --- BUTTON STYLES --- */
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-[var(--radius)] font-semibold transition-all duration-300 border-2 border-transparent disabled:opacity-50 disabled:cursor-not-allowed bg-primary text-white hover:bg-blue-600 hover:-translate-y-0.5;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-[var(--radius)] font-semibold transition-all duration-300 border-2 border-transparent disabled:opacity-50 disabled:cursor-not-allowed bg-transparent text-primary border-primary hover:bg-primary hover:text-white;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-[var(--radius)] font-semibold transition-all duration-300 border-2 border-transparent disabled:opacity-50 disabled:cursor-not-allowed bg-danger text-white hover:bg-red-600 hover:-translate-y-0.5;
+  }
+
+  .btn-icon {
+    @apply w-9 h-9 flex items-center justify-center rounded-[var(--radius)] transition-all duration-300 cursor-pointer border-none;
+  }
+
+  /* --- CARD & FORM --- */
+
+  .card {
+    @apply bg-white rounded-[var(--radius)] p-6 shadow mb-5;
+  }
+
+  .form-control {
+    @apply w-full px-4 py-3 border border-border rounded-[var(--radius)] text-base transition-colors focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary bg-white text-dark;
+  }
+
+  .form-label {
+    @apply block mb-2 font-medium;
+  }
+
+  .text-success { @apply text-secondary; }
+  .text-danger { @apply text-danger; }
+}
