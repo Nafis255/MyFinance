@@ -100,7 +100,7 @@ export default function CategoriesPage() {
             </div>
             
             <form onSubmit={handleSubmit} className="p-5">
-               {/* 1. Nama & Tipe */}
+               {/* Nama & Tipe */}
                <div className="mb-4">
                   <label className="form-label">Nama Kategori</label>
                   <input 
@@ -141,7 +141,7 @@ export default function CategoriesPage() {
                   </div>
                </div>
 
-               {/* 2. Warna */}
+               {/* Warna */}
                <div className="mb-4">
                   <label className="form-label">Warna Label</label>
                   <div className="flex items-center gap-3">
@@ -155,7 +155,7 @@ export default function CategoriesPage() {
                   </div>
                </div>
 
-               {/* 3. Pilih Ikon */}
+               {/* Pilih Ikon */}
                <div className="mb-6">
                   <label className="form-label">Pilih Ikon</label>
                   <div className="grid grid-cols-6 gap-2 h-32 overflow-y-auto p-2 border border-border rounded">

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { CATEGORIES as DEFAULT_CATEGORIES } from '@/utils/constants'; // Import bawaan
+import { CATEGORIES as DEFAULT_CATEGORIES } from '@/utils/constants'; 
 import { getIconComponent } from '@/utils/categoryIcons';
 
 export function useCategories() {
@@ -14,7 +14,7 @@ export function useCategories() {
   }, []);
 
   const loadCategories = () => {
-    // 1. Ambil kategori default (ubah format Object ke Array)
+    // Ambil kategori default (ubah format Object ke Array)
     const defaults = Object.entries(DEFAULT_CATEGORIES).map(([name, data]) => ({
       id: `default-${name}`,
       name: name,
@@ -22,7 +22,7 @@ export function useCategories() {
       isCustom: false
     }));
 
-    // 2. Ambil kategori custom dari LocalStorage
+    // Ambil kategori custom dari LocalStorage
     const stored = JSON.parse(localStorage.getItem('customCategories') || '[]');
     
     // Konversi nama ikon string (misal 'home') menjadi komponen React (<FaHome />)
@@ -32,7 +32,7 @@ export function useCategories() {
       isCustom: true
     }));
 
-    // 3. Gabungkan
+    // Gabungkan
     setCategories([...defaults, ...customs]);
     setLoading(false);
   };
